@@ -1,0 +1,6 @@
+.detignore
+data/
+train.sh
+profile.yaml
+run.py
+**/__pycache__/**
