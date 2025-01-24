@@ -5,7 +5,9 @@ This is the official PyTorch implementation of our WWW'25 **Oral** paper:
 **FedRIR: Rethinking Information Representation in Federated Learning**
 
 ## Overview
-![Overview](assets/overview.png)
+<p align="center">
+  <img src="assets/overview.png" width="50%" alt="Overview">
+</p>
 
 ## Requirements
 - Python 3.x
