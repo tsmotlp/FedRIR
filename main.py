@@ -17,12 +17,6 @@ def parse_args():
     parser.add_argument("--seed", type=int, default=0, help="Random seed")
     parser.add_argument("--num_trials", type=int, default=3, help="Number of trials")
     
-    # Model parameters
-    parser.add_argument("--in_channels", type=int, default=1, help="Number of input channels")
-    parser.add_argument("--num_classes", type=int, default=10, help="Number of classes")
-    parser.add_argument("--hidden_size", type=int, default=1024, help="Hidden size for feature extractors")
-    parser.add_argument("--embed_dim", type=int, default=512, help="Embedding dimension")
-    
     # Training parameters
     parser.add_argument("--lr", type=float, default=0.0005, help="Learning rate")
     parser.add_argument("--batch_size", type=int, default=100, help="Batch size")
@@ -54,6 +48,11 @@ def main():
     args.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     experiment_name = generate_dataset(args)
     args.experiment_name = experiment_name
+    # real-world datasets setting
+    if args.dataset == "DomainNet":
+        args.num_clients = 6
+    elif args.dataset == "OfficeCaltech10":
+        args.num_clients = 4
     print(args)
 
     best_accs = []

@@ -146,3 +146,20 @@ class FedRIRModel(nn.Module):
         ).permute(0, 5, 1, 3, 2, 4).reshape(b, c, h, w)
         
         return x_masked
+    
+
+def create_model(dataset):
+    if dataset == "MNIST":
+        return FedRIRModel(1, 10, 1024, 512)
+    elif dataset == "FashionMNIST":
+        return FedRIRModel(1, 10, 1024, 512)
+    elif dataset == "Cifar10":
+        return FedRIRModel(3, 10, 1600, 512)
+    elif dataset == "Cifar100":
+        return FedRIRModel(3, 100, 1600, 512)
+    elif dataset == "OfficeCaltech10":
+        return FedRIRModel(3, 10, 10816, 512)
+    elif dataset == "DomainNet":
+        return FedRIRModel(3, 10, 10816, 512)
+    else:
+        raise ValueError(f"Unsupported dataset: {dataset}")

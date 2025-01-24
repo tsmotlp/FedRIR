@@ -45,13 +45,9 @@ def generate_FashionMNIST(args):
     num_classes = len(set(dataset_label))
     print(f'Number of classes: {num_classes}')
 
-    # dataset = []
-    # for i in range(num_classes):
-    #     idx = dataset_label == i
-    #     dataset.append(dataset_image[idx])
     X, y, statistic = separate_data((dataset_image, dataset_label), args.num_clients, num_classes, 
                                     args.noniid, args.balance, args.partition, args.batch_size, 
-                                    args.train_ratio, args.alpha, class_per_client=10)
+                                    args.train_ratio, args.alpha, class_per_client=2)
     train_data, test_data = split_data(X, y, args.train_ratio)
     save_file(config_path, train_path, test_path, train_data, test_data, args.num_clients, num_classes, 
         statistic, args.noniid, args.balance, args.partition, args.batch_size, args.alpha)

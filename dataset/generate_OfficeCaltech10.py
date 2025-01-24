@@ -23,9 +23,9 @@ def read_officecaltech10_data(dataset_path, domain_name):
     return data_paths, data_labels
 
 
-class DomainNet(Dataset):
+class OfficeCaltech10Net(Dataset):
     def __init__(self, data_paths, data_labels, transforms, domain_name):
-        super(DomainNet, self).__init__()
+        super(OfficeCaltech10Net, self).__init__()
         self.data_paths = data_paths
         self.data_labels = data_labels
         self.transforms = transforms
@@ -52,7 +52,7 @@ def get_officecaltech10_dloader(dataset_path, domain_name):
         transforms.ToTensor()
     ])
 
-    dataset = DomainNet(data_paths, data_labels, data_transforms, domain_name)
+    dataset = OfficeCaltech10Net(data_paths, data_labels, data_transforms, domain_name)
     dataloader = DataLoader(dataset=dataset, batch_size=len(dataset), shuffle=False)
     return dataloader
 

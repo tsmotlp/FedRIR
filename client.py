@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from dataset.utils import read_client_data
-from model import FedRIRModel
+from model import create_model
 
 class FedRIRClient:
     def __init__(self, args, client_id):
@@ -17,12 +17,7 @@ class FedRIRClient:
         self.batch_size = args.batch_size
         self.mask_ratio = args.mask_ratio
 
-        self.model = FedRIRModel(
-            in_channels=args.in_channels, 
-            num_classes=args.num_classes, 
-            hidden_size=args.hidden_size, 
-            embed_dim=args.embed_dim
-        ).to(args.device)
+        self.model = create_model(args.dataset).to(args.device)
         self.gfe = copy.deepcopy(self.model.gfe)
 
         self.recon_loss = nn.MSELoss().to(self.device)
