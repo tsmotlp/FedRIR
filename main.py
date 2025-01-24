@@ -22,7 +22,7 @@ def parse_args():
     parser.add_argument("--batch_size", type=int, default=100, help="Batch size")
     parser.add_argument("--mask_ratio", type=float, default=0.6, help="Ratio of masked patches")
     parser.add_argument("--local_epochs", type=int, default=1, help="Number of local training epochs")
-    parser.add_argument("--global_epochs", type=int, default=100, help="Maximum number of global rounds")
+    parser.add_argument("--global_epochs", type=int, default=1000, help="Maximum number of global rounds")
     parser.add_argument("--eval_interval", type=int, default=1, help="Evaluation interval")
     
     # Federated learning parameters
