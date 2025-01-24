@@ -32,11 +32,11 @@ python main.py --dataset MNIST --num_clients 20 --global_epochs 1000 --join_rati
 ## Citation
 If you find this code useful for your research, please cite our paper:
 ```
-[Citation will be available after publication]
+coming soon
 ```
 
 ## License
 This project is licensed under the MIT License.
 
 ## Contact
-If you have any questions, please feel free to contact [your email].
+If you have any questions, please feel free to contact [yqhuang2912@gmail.com].
