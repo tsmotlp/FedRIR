@@ -32,7 +32,13 @@ python main.py --dataset MNIST --num_clients 20 --global_epochs 1000 --join_rati
 ## Citation
 If you find this code useful for your research, please cite our paper:
 ```
-coming soon
+@inproceedings{huang2025fedrir,
+  title={FedRIR: Rethinking Information Representation in Federated Learning},
+  author={Huang, Yongqiang and Shao, Zerui and Yang, Ziyuan and Lu, Zexin and Zhang, Yi},
+  booktitle={Proceedings of the ACM on Web Conference 2025},
+  pages={807--816},
+  year={2025}
+}
 ```
 
 ## License
